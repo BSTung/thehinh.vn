@@ -32,8 +32,7 @@
             </div>
             <!-- /.login-logo -->
             <div class="login-box-body">
-                <p class="login-box-msg">Chào mừng đến với "thehinh.vn"
-</p>
+                <p class="login-box-msg">Chào mừng đến với "thehinh.vn"</p>
                 <form action="" method="post">
                 	@csrf
                     <div class="form-group has-feedback">
@@ -45,11 +44,9 @@
                         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
                     </div>
                     <div class="row">
-
                         <!-- /.col -->
                         <div class="col-xs-4">
-                            <button type="submit" class="btn btn-primary btn-block btn-flat">Đăng nhập
-</button>
+                            <button type="submit" class="btn btn-primary btn-block btn-flat">Đăng nhập</button>
                         </div>
                         <!-- /.col -->
                     </div>

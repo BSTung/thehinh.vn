@@ -1,5 +1,5 @@
 <div style="width: 100%;max-width: 600px;margin: 0 auto">
-	<div style="height: 55px; background: #3a2651;padding: 10px">
+	<div style="height: 55px; background: #03a9f4;padding: 10px">
 		<div style="width: 50%">
 			<a href="">
 				<img style="height: 55px" src="">

@@ -31,6 +31,17 @@ Route::group(['namespace' => 'Auth', 'prefix' => 'account'], function(){
 	Route::get('/{social}/redirect', 'SocialAuthController@redirect')->name('get.login.social');
 	Route::get('/{social}/callback', 'SocialAuthController@callback')->name('get.login.social_callback');
 });
+
+
+// Login admin
+Route::group(['prefix' => 'admin-auth','namespace' => 'Admin\Auth'], function() {
+    Route::get('login','AdminLoginController@getLoginAdmin')->name('get.login.admin');
+    Route::post('login','AdminLoginController@postLoginAdmin');
+
+    Route::get('logout','AdminLoginController@getLogoutAdmin')->name('get.logout.admin');
+});
+
+
 Route::group(['namespace' => 'Frontend'], function(){
 	Route::get('','HomeController@index')->name('get.home');
 	Route::get('ajax-load-product-recently','HomeController@getLoadProductRecently')->name('ajax_get.product_recently');
