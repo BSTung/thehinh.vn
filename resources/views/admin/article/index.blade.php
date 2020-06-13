@@ -15,19 +15,19 @@
         <div class="box">
             <div class="box-header with-border">
                 <div class="box-header">
-                    <h3 class="box-title"><a href="{{ route('admin.article.create')}}"  class="class btn btn-success">Thêm Mới<i class="fa fa-plus"></i></a></h3>
+                    <h3 class="box-title"><a href="{{ route('admin.article.create')}}"  class="class btn btn-success">Thêm Mới <i class="fa fa-plus"></i></a></h3>
                 </div>
                     <div class="col-md-12">
                         <table class="table">
                             <tbody>
                                     <tr>
-                                        <th style="width: 10px">#</th>
-                                        <th>Name</th>
-                                        <th>Category</th>
-                                        <th>Avatar</th>
+                                        <th style="width: 10px">STT</th>
+                                        <th>Tên bài viết</th>
+                                        <th>Danh mục</th>
+                                        <th>Hình ảnh</th>
                                         <th>Hot</th>
-                                        <th>Status</th>
-                                        <th>Action</th>
+                                        <th>Trạng thái</th>
+                                        <th>Chỉnh sửa</th>
                                     </tr>
                             </tbody>    
                                  @if (isset($articles))
@@ -58,8 +58,8 @@
                                                 </td>
                                                 <td>{{ $article->created_at}}</td>
                                                 <td>
-                                                    <a href="{{ route('admin.article.update', $article->id)}}" class="btn btn-xs btn-success"><i class="fa fa-pencil"></i> Edit</a>
-                                                    <a href="{{ route('admin.article.delete', $article->id)}}" class="btn btn-xs btn-danger"><i class="fa fa-trash"></i> Delete</a>
+                                                    <a href="{{ route('admin.article.update', $article->id)}}" class="btn btn-xs btn-success"><i class="fa fa-pencil"></i> Cập nhật</a>
+                                                    <a href="{{ route('admin.article.delete', $article->id)}}" class="btn btn-xs btn-danger"><i class="fa fa-trash"></i> Xóa</a>
                                                 </td>
                                             </tr>
                                         @endforeach

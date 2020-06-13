@@ -38,8 +38,8 @@ class AdminAttributeController extends Controller
     public function edit($id)
     {
         $attribute = Attribute::find($id);
-     	$categories = Category::select('id', 'c_name')->get();
-        return view('admin.attribute.update', compact('attribute', 'categories'));
+     	$categories = Category::select('id','c_name')->get();
+        return view('admin.attribute.update', compact('attribute','categories'));
     }
 
     public function update(AdminRequestAttribute $request, $id)

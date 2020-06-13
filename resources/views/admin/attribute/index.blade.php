@@ -38,9 +38,7 @@
                                                     </span>
                                                 </td>
                                                 <td>
-                                                    <span class="label label-info">
-                                                        {{ $attribute->category->c_name ?? "[N\A]"}}
-                                                    </span>
+                                                    <span class="label label-info">{{ $attribute->category->c_name ?? "[N\A]"}}</span>
                                                 </td>
                                                 <td>{{ $attribute->created_at}}</td>
                                                 <td>

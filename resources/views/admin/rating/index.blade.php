@@ -26,12 +26,12 @@
                     <div class="col-md-12">
                         <table class="table">
                                     <tr>
-                                        <th style="width: 10px">#</th>
-                                        <th>Name</th>
-                                        <th>User</th>
-                                        <th>Rating</th>
-                                        <th>Time</th>
-                                        <th>Action</th>
+                                        <th style="width: 10px">STT</th>
+                                        <th>Tên sản phẩm</th>
+                                        <th>Người đánh giá</th>
+                                        <th>Đánh giá</th>
+                                        <th>Thời gian</th>
+                                        <th>Chỉnh sửa</th>
                                     </tr>
                                     @if (isset($ratings))
                                         @foreach($ratings as $rating)
@@ -48,7 +48,7 @@
                                                 </td>
                                                 <td>{{ $rating->created_at}}</td>
                                                 <td>
-                                                    <a href="{{ route('admin.rating.delete', $rating->id)}}" class="btn btn-xs btn-danger"><i class="fa fa-trash"></i> Delete</a>
+                                                    <a href="{{ route('admin.rating.delete', $rating->id)}}" class="btn btn-xs btn-danger"><i class="fa fa-trash"></i> Xóa</a>
                                                 </td>
                                             </tr>
                                         @endforeach

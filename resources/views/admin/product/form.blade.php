@@ -168,7 +168,7 @@
     <div class="col-sm-12 clearfix">
         <div class="box-footer text-center">
             <a href="{{ route('admin.product.index') }}" class="btn btn-default"><i class="fa fa-arrow-left"></i> Hủy bỏ</a>
-            <button type="submit" class="btn btn-success"><i class="fa fa-save"></i>{{ isset($product) ? "Cập nhật" : " Thêm mới"}}</button> 
+            <button type="submit" class="btn btn-success"><i class="fa fa-save"></i>{{ isset($product) ? " Cập nhật" : " Thêm mới"}}</button> 
         </div>
     </div>
 </form>

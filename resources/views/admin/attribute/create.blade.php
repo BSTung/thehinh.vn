@@ -45,9 +45,13 @@
                             <div class="form-group {{ $errors->first('atb_category_id') ? 'has-error' : ''}}">
                                 <label for="name">Danh mục<span class="text-danger">(*)</span></label>
                                 <select class="form-control" name="atb_category_id">
-                                    @foreach($categories as $item)
-                                        <option value="1">{{ $item->c_name}}</option>
-                                    @endforeach
+                                    
+                                        <option value="1">Sữa Tăng Cân</option>
+                                        <option value="2">Whey Protein</option>
+                                        <option value="3">BCAA</option>
+                                        <option value="4">Vitamin, Dầu Cá</option>
+                                        <option value="5">Giảm Mỡ</option>
+                                    
                                 </select> 
                                     @if ($errors->first('atb_category_id'))
                                         <span class="text-danger">{{ $errors->first('atb_category_id')}}</span>

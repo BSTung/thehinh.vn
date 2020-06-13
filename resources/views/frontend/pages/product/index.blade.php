@@ -14,14 +14,14 @@
                 @include('frontend.pages.product.include._inc_sidebar')
             </div>
             <div class="right">
-                <div class="breadcrumb">
+                <!-- <div class="breadcrumb">
                     <ul>
                         <li >
-                            <a itemprop="url" href="/" title="Home"><span itemprop="title">Trang chủ</span></a>
+                            <a itemprop="url" href="http://localhost:8080/frameLaravel/thehinh.vn/public/" title="Home"><span itemprop="title">Trang chủ</span></a>
                         </li>
                     </ul>
-                </div>
-                <div class="filter-tab">
+                </div> -->
+                <!-- <div class="filter-tab">
                     <ul>
                         @for($i = 1; $i <= 6; $i++)
                             <li class="{{ Request::get('price') == $i ? "active" : "" }}">
@@ -31,11 +31,10 @@
                             </li>
                         @endfor
                     </ul>
-                </div>
-                {{-- {{  dd($products) }} --}}
+                </div> -->
                 <div class="order-tab">
-                    <span class="total-prod">Tổng số: {{ $products->total() }} sản phẩm Tính năng</span>
-                    <div class="sort">
+                    <span class="total-prod">Tổng số: {{ $products->total() }} Sản phẩm</span>
+                    <!-- <div class="sort">
                         <div class="item">
                             <span class="title js-show-sort">Sắp xếp <i class="la la-caret-down"></i></span>
                             <ul>
@@ -43,7 +42,7 @@
                                 <li><a class="{{ Request::get('sort') == 'asc' ? "active" : "" }}" href="{{ request()->fullUrlWithQuery(['sort'=> 'asc']) }}">Cũ nhất</a></li>
                             </ul>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="group">
                     @foreach($products as $product)

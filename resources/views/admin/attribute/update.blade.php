@@ -25,7 +25,6 @@
 					            @if ($errors->first('atb_name'))
 					            	<span class="text-danger">{{ $errors->first('atb_name')}}</span>
 					            @endif		        
-    					<!-- /.box-body -->
                    		</div>
                     </div>
                 		<div class="col-md-8">
@@ -46,9 +45,11 @@
                             <div class="form-group {{ $errors->first('atb_category_id') ? 'has-error' : ''}}">
                                 <label for="name">Danh mục<span class="text-danger">(*)</span></label>
                                 <select class="form-control" name="atb_category_id">
-                                    @foreach($categories as $item)
-                                        <option value="1" {{ $attribute->atb_category_id == $item->id ?  "selected= 'selected'" : ''}}>{{ $item->c_name}}</option>
-                                    @endforeach
+                                    <option value="1" {{ $attribute->atb_category_id == 1 ?  "selected= 'selected'" : ''}}>Sữa Tăng Cân</option>
+                                        <option value="2" {{ $attribute->atb_category_id == 2 ?  "selected= 'selected'" : ''}}>Whey Protein</option>
+                                        <option value="3" {{ $attribute->atb_category_id == 3 ?  "selected= 'selected'" : ''}}>BCAA</option>
+                                        <option value="4" {{ $attribute->atb_category_id == 4 ?  "selected= 'selected'" : ''}}>Vitamin, Dầu Cá</option>
+                                        <option value="5" {{ $attribute->atb_category_id == 5 ?  "selected= 'selected'" : ''}}>Giảm Mỡ</option>
                                 </select> 
                                     @if ($errors->first('atb_category_id'))
                                         <span class="text-danger">{{ $errors->first('atb_category_id')}}</span>

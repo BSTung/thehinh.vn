@@ -95,7 +95,7 @@
         </div>
         <div class="product-two" id="product-recently"></div>
 
-        @if ($categoriesHot)
+        <!-- @if ($categoriesHot)
             @foreach($categoriesHot as $category)
                 <div class="product-five">
                     <div class="top">
@@ -113,7 +113,7 @@
                     </div>
                 </div>
             @endforeach
-        @endif
+        @endif -->
         @include('frontend.pages.home.include._inc_article')
     </div>
 @stop
