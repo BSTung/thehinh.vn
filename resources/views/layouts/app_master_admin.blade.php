@@ -112,7 +112,7 @@
 
                         <li class="">
                             <a href="{{ route('admin.user.index')}}">
-                                <i class="fa fa-user"></i> <span>Người dùng (User)</span>
+                                <i class="fa fa-user"></i> <span>Người dùng (khách hàng)</span>
                             </a>
                         </li>
 
@@ -134,6 +134,16 @@
                         <li class="">
                             <a href="{{ route('admin.rating.index')}}">
                                 <i class="fa fa-edit"></i> <span>Đánh giá</span>
+                            </a>
+                        </li>
+                        <!-- <li class="">
+                            <a href="{{ route('admin.comment.index')}}">
+                                <i class="fa fa-edit"></i> <span>Bình luận</span>
+                            </a>
+                        </li> -->
+                        <li class="">
+                            <a href="{{ route('admin.contact')}}">
+                                <i class="fa fa-edit"></i> <span>Liên hệ</span>
                             </a>
                         </li>
                         <li class="header">Hệ thống</li>

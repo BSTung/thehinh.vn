@@ -6,13 +6,13 @@
 @stop
 @section('content')
     <section class="py-lg-5" style="background: white; padding: 20px">
-        <h2>Cập nhật thông tin</h2>
+        <!-- <h2>Cập nhật thông tin</h2> -->
         <div class="row mb-5">
             <div class="col-sm-12">
                 <form action="" method="POST">
                 @csrf
             <div class="form-group">
-                <label for="">Name</label>
+                <label for="">Tên người dùng</label>
                 <input type="text" name="name" class="form-control" value="{{ Auth::user()->name }}" placeholder="">
                 <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
             </div>
@@ -22,24 +22,24 @@
                 <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
             </div>
             <div class="form-group">
-                <label for="">Phone</label>
+                <label for="">Số điện thoại</label>
                 <input type="number" name="phone" class="form-control" value="{{ Auth::user()->phone }}" placeholder="">
                 <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
             </div>
             <div class="form-group">
-                <label for="">Address</label>
+                <label for="">Địa chỉ</label>
                 <input type="text" name="address" class="form-control" value="{{ Auth::user()->address }}" placeholder="Địa chỉ">
                 <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
             </div>
 
-            <div class="from-group">
+            <!-- <div class="from-group">
                 <div class="upload-btn-wrapper">
-                    <button class="btn-upload">Upload a file</button>
-                    <input type="file" name="avatar" />
+                    <button class="btn-upload">Cập nhật ảnh</button>
+                    <input type="file" name="avatar" value="" />
                 </div>
-            </div>
+            </div> -->
             
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary">Cập nhật</button>
             </form>
             </div>
          </div>

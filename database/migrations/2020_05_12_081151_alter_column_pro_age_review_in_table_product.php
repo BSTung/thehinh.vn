@@ -13,8 +13,9 @@ class AlterColumnProAgeReviewInTableProduct extends Migration
      */
     public function up()
     {
-        Schema::table('table_product', function (Blueprint $table) {
-            //
+        Schema::table('products', function (Blueprint $table) {
+              $table->integer('pro_age_review')->default(0)->after('pro_review_star');
+              
         });
     }
 
@@ -25,8 +26,8 @@ class AlterColumnProAgeReviewInTableProduct extends Migration
      */
     public function down()
     {
-        Schema::table('table_product', function (Blueprint $table) {
-            //
+        Schema::table('products', function (Blueprint $table) {
+            $table->dropColumn(['pro_age_review']);
         });
     }
 }

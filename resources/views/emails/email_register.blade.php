@@ -15,6 +15,6 @@
 	<div style="background: #f4f5f5; box-sizing: border-box;padding: 15px">
 		<p style="margin: 2px 0;color: #333">Email : buisontung1997@gmail.com</p>
 		<p style="margin: 2px 0;color: #333">Phone : 0337857855</p>
-		<p style="margin: 2px 0;color: #333">Facebook : <a href="https://www.facebook.com/son.tung.3194/">TungBS</a></p>
+		<p style="margin: 2px 0;color: #333">Fanpage : <a href="https://www.facebook.com/Thehinhvn-110506877371094/">Thehinh.vn(FB)</a></p>
 	</div>
 </div>

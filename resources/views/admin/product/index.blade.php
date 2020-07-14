@@ -3,11 +3,11 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>Quản lý sản phẩm</h1>
-        <ol class="breadcrumb">
+<!--         <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
             <li><a href="{{ route('admin.product.index')}}"> Product</a></li>
             <li class="active"> List</a></li>
-        </ol>
+        </ol> -->
     </section>
     <!-- Main content -->
     <section class="content">
@@ -16,7 +16,7 @@
             <div class="box-header with-border">
                 <div class="box-title">
                     <form class="form-inline">
-                        <input type="text" class="form-control" value="{{ Request::get('id')}}" name="id" placeholder="ID">
+                        <!-- <input type="text" class="form-control" value="{{ Request::get('id')}}" name="id" placeholder="ID"> -->
                         <input type="text" class="form-control" value="{{ Request::get('name')}}" name="name" placeholder="Name...">
                         <select name="category" class="form-control">
                             <option value="0">Danh mục</option>
@@ -47,9 +47,11 @@
                                     </tr>
                             </tbody>    
                                  @if (isset($products))
+                                        <?php $count = 0; ?>
                                         @foreach ($products as $product)
+                                        <?php $count++; ?>
                                             <tr>
-                                                <td>{{ $product->id}}</td>
+                                                <td>{{ $count}}</td>
                                                 <td>{{ $product->pro_name}}</td>
                                                 <td>
                                                     <span class="label label-success">{{ $product->category->c_name ?? "[N\A]"}}</span>

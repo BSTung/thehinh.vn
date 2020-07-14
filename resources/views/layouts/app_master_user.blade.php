@@ -22,13 +22,33 @@
 <div class="container user">
     <div class="left">
         <div class="header">
-            <img src="{{ pare_url_file(Auth::user()->avatar) }}" alt="">
+            <img src="{{ url('images/logoGym.png') }}" alt="">
             <p>
-                <span>Tài khoản của</span>
-                <span>Bùi Sơn Tùng</span>
+                <span><a href="">{{ Auth::user()->name }}</a></span>
+                <span></span>
             </p>
         </div>
+        <!-- <p>Đăng nhập lần cuối: <b>{{ get_time_login(Auth::user()->log_login)['time'] ?? "" }}</b></p> -->
         
+        <div class="content">
+            <ul class="left-nav">
+               
+               {{--
+                @foreach(config('user') as $item)
+                    <li>
+                        <a href="{{ route($item['route']) }}" class="{{ \Request::route()->getName() == $item['route'] ? 'active' : '' }}">
+                            <i class="{{ $item['icon'] }}"></i>
+                            <span>{{ $item['name'] }}</span>
+                        </a>
+                    </li>
+                @endforeach
+                --}}
+
+
+            </ul>
+        </div>
+
+
 
         <div class="collapse navbar-collapse flex-column" id="navbar-collapse">
                     <ul class="navbar-nav d-lg-block">
@@ -38,6 +58,7 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('get.user.transaction') }}">Quản lý đơn hàng</a>
                         </li>
+                        
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('get.user.favourite') }}">Sản phẩm yêu thích</a>
                         </li>

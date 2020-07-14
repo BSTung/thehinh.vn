@@ -3,11 +3,11 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>Quản lý các Page tĩnh</h1>
-        <ol class="breadcrumb">
+        <!-- <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
             <li><a href="{{  route('admin.static.index') }}"> Static</a></li>
             <li class="active"> List</a></li>
-        </ol>
+        </ol> -->
     </section>
     <!-- Main content -->
     <section class="content">
@@ -29,9 +29,11 @@
                                     <th>Chỉnh sửa</th>
                                 </tr>
                                 @if (isset($statics))
+                                <?php $count = 0; ?>
                                     @foreach($statics as $static)
+                                    <?php $count++; ?>
                                         <tr>
-                                            <td>{{ $static->id }}</td>
+                                            <td>{{ $count }}</td>
                                             <td>{{ $static->s_title }}</td>
                                             <td>{{ $static->getType($static->s_type) }}</td>
                                             <td>{{  $static->created_at }}</td>

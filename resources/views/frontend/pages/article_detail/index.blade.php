@@ -7,13 +7,13 @@
         <div class="breadcrumb">
                     <ul>
                         <li>
-                            <a href="/" title="Home"><span itemprop="title">Trang chủ</span></a>
+                            <a href="http://localhost:8080/frameLaravel/thehinh.vn/public/" title="Home"><span itemprop="title">Trang chủ</span></a>
                         </li>
                         <li>
-                            <a href="{{ route('get.blog.home')}}" title="Sản phẩm chính hãng"><span itemprop="title">Bài viết</span></a>
+                            <a href="{{ route('get.blog.home')}}" title="Bài viết"><span itemprop="title">Bài viết</span></a>
                         </li>
                         <li>
-                            <a href="javascript://" title="Sản phẩm chính hãng"><span itemprop="title">{{ $article->a_name}}</span></a>
+                            <a href="javascript://" title="Chi tiết bài viết"><span itemprop="title">{{ $article->a_name}}</span></a>
                         </li>
                     </ul>
                 </div>

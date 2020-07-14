@@ -26,7 +26,7 @@
                                 @endif
                             </div>
                         </div>
-                        <div class="col-sm-8">
+                       <!--  <div class="col-sm-8">
                             <div class="form-group">
                                 <label for="name">Parent <span class="text-danger">(*)</span></label>
                                 <select name="c_parent_id" class="form-control" id="">
@@ -39,7 +39,7 @@
                                     @endforeach
                                 </select>
                             </div>
-                        </div>
+                        </div> -->
                         <div class="col-sm-4">
                             <div class="box box-warning">
                                 <div class="box-header with-border">
@@ -49,7 +49,7 @@
                                     <div style="margin-bottom: 10px">
                                         <img src="/images/no-image.jpg" onerror="this.onerror=null;this.src='/images/no-image.jpg';" alt="" class="img-thumbnail" style="width: 200px;height: 200px;">
                                     </div>
-                                    <div style="position:relative;"> <a class="btn btn-primary" href="javascript:;"> Choose File... <input type="file" style="position:absolute;z-index:2;top:0;left:0;filter: alpha(opacity=0);-ms-filter:&quot;progid:DXImageTransform.Microsoft.Alpha(Opacity=0)&quot;;opacity:0;background-color:transparent;color:transparent;" name="c_avatar" size="40" class="js-upload"> </a> &nbsp; <span class="label label-info" id="upload-file-info"></span> </div>
+                                    <div style="position:relative;"> <a class="btn btn-primary" href="javascript:;"> Chọn ảnh... <input type="file" style="position:absolute;z-index:2;top:0;left:0;filter: alpha(opacity=0);-ms-filter:&quot;progid:DXImageTransform.Microsoft.Alpha(Opacity=0)&quot;;opacity:0;background-color:transparent;color:transparent;" name="c_avatar" size="40" class="js-upload"> </a> &nbsp; <span class="label label-info" id="upload-file-info"></span> </div>
                                 </div>
                             </div>
                         </div>

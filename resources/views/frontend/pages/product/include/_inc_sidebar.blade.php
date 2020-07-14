@@ -59,7 +59,7 @@
             </div>
         @endforeach
     @endif
-    <div class="item">
+    <!-- <div class="item">
         <div class="item__title">Đánh giá</div>
         <div class="item__content ratings">
             <ul>
@@ -77,5 +77,5 @@
                 @endfor
             </ul>
         </div>
-    </div>
+    </div> -->
 </div>

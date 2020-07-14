@@ -2,9 +2,9 @@
 @section('content')
     <!-- Content Header (Page header) -->
     <section class="content-header">
-        <h1>Trang quản trị hệ thống website xây dựng website bán đồng hồ</h1>
+        <h1>Trang quản trị hệ thống website bán thực phẩm bổ sung</h1>
         <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li><a href="#"><!-- <i class="fa fa-dashboard"></i> Home</a></li> -->
         </ol>
     </section>
     <!-- Main content -->
@@ -13,6 +13,11 @@
         <div class="box">
             <div class="box-header with-border">
                 <h3 class="box-title">Thông tin sinh viên</h3>
+                <h5>
+                    <p>Tên sinh viên: Bùi Sơn Tùng</p>
+                    <p>Lớp          : K04-Cntt3</p>
+                    <p>MSSV         : 0450080147</p>
+                </h5>
                 <div class="box-tools pull-right">
                     <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip"
                     title="Collapse">

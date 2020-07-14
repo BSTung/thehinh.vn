@@ -2,88 +2,82 @@
 @section('css')
     <link rel="stylesheet" href="{{ asset('css/blog.min.css') }}">
      <style type="text/css">
-        ul.breadcrumb {
-            padding: 10px 16px;
-            list-style: none;
-            background-color: #eee;
+        .pagination {
+            margin: 10px auto;
+            display: flex;
+            margin-left: 9px;
         }
-        ul.breadcrumb li {
-            display: inline;
-            font-size: 18px;
+        .pagination li {
+            padding: 5px;
+            margin: 0 2px;
+            border: 1px solid #dedede;
         }
-        ul.breadcrumb li+li:before {
-            padding: 8px;
-            color: black;
-            content: "/\00a0";
+        .pagination li a, .pagination li span {
+            line-height: 25px;
+            display: block;
+            text-align: center;
+            width: 25px;
+            height: 25px;
         }
-        ul.breadcrumb li a {
-            color: #0275d8;
-            text-decoration: none;
-        }
-        ul.breadcrumb li a:hover {
-            color: #01447e;
-            text-decoration: underline;
-        }
-        
     </style>
 @stop
 @section('content')
     <div class="container">
         <div class="breadcrumb">
-            <ul class="breadcrumb">
-              <li><a href="/frameLaravel/thehinh.vn/public/">Trang chủ</a></li>
-              <li>Bài viết</li>
-            </ul>
-        <!--    
             <ul>
-                <li>
-                    <a href="/" title="Home"><span itemprop="title">Trang chủ</span></a>
+                <li >
+                    <a href="http://localhost:8080/frameLaravel/thehinh.vn/public/" title="Trang chủ"><span itemprop="title">Trang chủ</span></a>
                 </li>
-                <li>
-                    <a href="{{ route('get.blog.home')}}" title="Sản phẩm chính hãng">
-                        Bài viết
-                    </a>
+                <li >
+                    <a href="{{ route('get.blog.home') }}" title="Bài viết"><span itemprop="title">Bài viết</span></a>
                 </li>
+                @if (isset($menu))
+                    <li >
+                        <a href="" title="{{ $menu->mn_name }}"><span itemprop="title">{{ $menu->mn_name }}</span></a>
+                    </li>
+                @endif
             </ul>
-        -->
         </div>
-        
         <div class="blog-main">
             <div class="left">
-                <div class="post-hot">
-                    <div class="hot-left">
-                        <div class="avatar">
-                            <a href="" title="" class="image cover">
-                                <img data-src="" class="lazyload" alt="" src="<!-- {{ url('images/banner/dongho.jpg') }} -->">
-                            </a>
-                        </div>
-                        <a href="" title="" class="title">Tiêu đề bài viết</a>
-                        <p class="intro-short">
-                            Thật là đáng tiếc nếu như bạn quá bận rộn và trót bỏ lỡ bão sale Black Friday nhưng mọi chuyện sẽ không còn quá tệ nếu bạn biết sau Black Friday còn có Cyber Monday nữa.
-                        </p>
-                    </div>
-                    <div class="hot-right">
-                        <div class="top">
+                @if (isset($articleTop))
+                    <div class="post-hot">
+                        @if ($articleTop = $articlesHotTop->first())
+                        <div class="hot-left">
                             <div class="avatar">
-                                <a href="" title="" class="image cover">
-                                    <img data-src="" class="lazyload" alt="" src="<!-- {{ url('images/banner/dongho.jpg') }} -->">
+                                <a href="{{ route('get.blog.detail',$articleTop->a_slug.'-'.$articleTop->id) }}" title="" class="image cover">
+                                    <img class="lazyload" alt="" src="{{ pare_url_file($articleTop->a_avatar) }}">
                                 </a>
                             </div>
-                            <a href="" title="" class="title">Tiêu đề bài viết</a>
+                            <a href="" title="" class="title">{{  $articleTop->a_name }}</a>
+                            <p class="intro-short">{{  $articleTop->a_description }}</p>
                         </div>
-                        <div class="bot">
-                            <a href="" title="" class="">Những sản phẩm được người tiêu dùng ưu thích tại thehinh.vn</a>
-                            <a href="" title="" class="">Những dòng sản phẩm chất lượng</a>
-                            <a href="" title="" class="">Được lựa chọn nhiều nhất tại thehinh.vn</a>
-                            <a href="" title="" class="">Được lựa chọn nhiều nhất tại thehinh.vn</a>
+                        @endif
+                        <div class="hot-right">
+                            @foreach($articlesHotTop as $i => $item)
+                            @if ($i == 0)
+                                <div class="top">
+                                    <div class="avatar">
+                                        <a href="{{ route('get.blog.detail',$item->a_slug.'-'.$item->id) }}" title="" class="image cover">
+                                            <img class="lazyload" alt="" src="{{ pare_url_file($item->a_avatar) }}">
+                                        </a>
+                                    </div>
+                                    <a href="{{ route('get.blog.detail',$item->a_slug.'-'.$item->id) }}" title="" class="title">{{  $item->a_name }}</a>
+                                </div>
+                            @else
+                                <div class="bot">
+                                    <a href="{{ route('get.blog.detail',$item->a_slug.'-'.$item->id) }}" title="" class="">{{ $item->a_name }}</a>
+                                </div>
+                            @endif
+                            @endforeach
                         </div>
                     </div>
-                </div>
+                @endif
                 <div class="post-list">
                     @foreach($articles as $article)
-                        @include('frontend.pages.article.include._inc_blog_item',['article' => $article])
+                        @include('frontend.pages.article.include._inc_blog_item', ['article' => $article])
                     @endforeach
-                        <div style="display: block;">
+                    <div style="display: block;">
                         {!! $articles->appends([])->links() !!}
                     </div>
                 </div>
@@ -92,7 +86,6 @@
                 @include('frontend.components.articles_hot_sidebar_top',['articles' => $articlesHotSidebarTop])
                 @include('frontend.components.top_product',['products' => $productTopPay])
                 @include('frontend.components.hot_article',['articles'  => $articlesHot])
-                
             </div>
         </div>
     </div>

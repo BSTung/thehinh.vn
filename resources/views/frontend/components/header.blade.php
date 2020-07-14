@@ -74,10 +74,10 @@
         <div class="container header-wrapper">
             <!--Thay đổi-->
             <div class="logo">
-                <a href="/frameLaravel/thehinh.vn/public/" class="desktop">
+                <a href="http://localhost:8080/frameLaravel/thehinh.vn/public/" class="desktop">
                     <img src="{{ url('images/logo1.jpg') }}" style="height: 35px;" alt="Home">
                 </a>
-         <a href="/frameLaravel/thehinh.vn/public/" class="mobile">
+         <a href="http://localhost:8080/frameLaravel/thehinh.vn/public/" class="mobile">
              <img src="{{ url('images/logo2.jpg') }}" alt="Home">
          </a>
             <li>

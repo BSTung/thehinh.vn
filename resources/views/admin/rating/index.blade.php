@@ -11,12 +11,12 @@
 </style>
     <!-- Content Header (Page header) -->
     <section class="content-header">
-        <h1>Danh sách đánh giá, review sản phẩm</h1>
-        <ol class="breadcrumb">
+        <h1>Danh sách đánh giá sản phẩm</h1>
+        <!-- <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
             <li><a href="{{ route('admin.rating.index')}}"> Rating</a></li>
             <li class="active"> List</a></li>
-        </ol>
+        </ol> -->
     </section>
     <!-- Main content -->
     <section class="content">
@@ -30,13 +30,16 @@
                                         <th>Tên sản phẩm</th>
                                         <th>Người đánh giá</th>
                                         <th>Đánh giá</th>
+                                        <th>Nội dung</th>
                                         <th>Thời gian</th>
                                         <th>Chỉnh sửa</th>
                                     </tr>
                                     @if (isset($ratings))
+                                        <?php $count = 0; ?>
                                         @foreach($ratings as $rating)
+                                        <?php $count++; ?>
                                             <tr>
-                                                <td>{{ $rating->id}}</td>
+                                                <td>{{ $count}}</td>
                                                 <td>{{ $rating->product->pro_name ?? "[N\A]"}}</td>
                                                 <td>{{ $rating->user->name ?? "[N\A]"}}</td>
                                                 <td>
@@ -46,8 +49,10 @@
                                                     @endfor
                                                     </div>
                                                 </td>
+                                                <td>{{ $rating->r_content}}</td>
                                                 <td>{{ $rating->created_at}}</td>
                                                 <td>
+
                                                     <a href="{{ route('admin.rating.delete', $rating->id)}}" class="btn btn-xs btn-danger"><i class="fa fa-trash"></i> Xóa</a>
                                                 </td>
                                             </tr>

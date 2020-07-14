@@ -3,11 +3,11 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>Quản lý danh mục bài viết</h1>
-        <ol class="breadcrumb">
+        <!-- <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
             <li><a href="{{ route('admin.menu.index')}}"> Menu</a></li>
             <li class="active"> List</a></li>
-        </ol>
+        </ol> -->
     </section>
     <!-- Main content -->
     <section class="content">
@@ -22,20 +22,22 @@
                                     <tr>
                                         <th style="width: 10px">STT</th>
                                         <th>Tên danh mục</th>
-                                        <th>Hình ảnh</th>
+                                        <!-- <th>Hình ảnh</th> -->
                                         <th>Trạng thái</th>
                                         <th>Hot</th>
                                         <th>Thời gian</th>
                                         <th>Chỉnh sửa</th>
                                     </tr>
                                     @if ($menus)
+                                    <?php $count = 0; ?>
                                         @foreach ($menus as $menu)
+                                        <?php $count++; ?>
                                             <tr>
-                                                <td>{{ $menu->id}}</td>
+                                                <td>{{ $count}}</td>
                                                 <td>{{ $menu->mn_name}}</td>
-                                                <td>
+                                                <!-- <td>
                                                     <img src="{{ pare_url_file($menu->mn_avatar)}}" style="width: 80px; height: 80px;">
-                                                </td>
+                                                </td> -->
                                                 <td>
                                                       @if ($menu->mn_status == 1)
                                                          <a href="{{ route('admin.menu.active', $menu->id)}}"class="label label-info">Show</a>

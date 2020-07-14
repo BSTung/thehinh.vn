@@ -3,11 +3,11 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>Quản lý thành viên</h1>
-        <ol class="breadcrumb">
+        <!-- <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
             <li><a href="{{ route('admin.user.index')}}"> User</a></li>
             <li class="active"> List</a></li>
-        </ol>
+        </ol> -->
     </section>
     <!-- Main content -->
     <section class="content">
@@ -25,9 +25,11 @@
                                         <th>Chỉnh sửa</th>
                                     </tr>
                                     @if (isset($users))
+                                        <?php $count = 0; ?>
                                         @foreach ($users as $user)
+                                        <?php $count++; ?>
                                             <tr>
-                                                <td>{{ $user->id}}</td>
+                                                <td>{{ $count}}</td>
                                                 <td>{{ $user->name}}</td>
                                                 <td>{{ $user->email}}</td>
                                                 <td>{{ $user->phone}}</td>

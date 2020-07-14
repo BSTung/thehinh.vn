@@ -9,6 +9,7 @@ use Carbon\Carbon;
 use App\Models\Transaction;
 use App\Models\Order;
 use App\Mail\TransactionSuccess;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 
 class ShoppingCartController extends Controller

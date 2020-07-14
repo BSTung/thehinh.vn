@@ -1,5 +1,5 @@
 <section id="box-news">
-    <div class="top"> <a href="#" class="main-title">Tin tức</a> </div>
+    <div class="top"> <a href="{{ route('get.blog.home')}}" class="main-title">Tin tức</a> </div>
     <div class="bot">
         @foreach($articlesHot as $item)
         <div class="col">

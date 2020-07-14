@@ -3,11 +3,11 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>Quản lý Sự kiện</h1>
-        <ol class="breadcrumb">
+        <!-- <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
             <li><a href="{{  route('admin.event.index') }}"> Event</a></li>
             <li class="active"> List</a></li>
-        </ol>
+        </ol> -->
     </section>
     <!-- Main content -->
     <section class="content">
@@ -30,9 +30,11 @@
                                     <th>Chỉnh sửa</th>
                                 </tr>
                                 @if (isset($events))
+                                <?php $count = 0; ?>
                                     @foreach($events as $event)
+                                    <?php $count++; ?>
                                         <tr>
-                                            <td>{{ $event->id }}</td>
+                                            <td>{{ $count }}</td>
                                             <td>{{ $event->e_name }}</td>
                                             <td>{{ $event->e_link }}</td>
                                             <td>

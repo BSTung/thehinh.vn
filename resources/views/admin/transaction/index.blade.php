@@ -3,11 +3,11 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>Quản lý đơn hàng</h1>
-        <ol class="breadcrumb">
+        <!-- <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
             <li><a href="{{ route('admin.transaction.index')}}"> Transaction</a></li>
             <li class="active"> List</a></li>
-        </ol>
+        </ol> -->
     </section>
     <!-- Main content -->
     <section class="content">
@@ -16,7 +16,7 @@
             <div class="box-header with-border">
                 <div class="box-title">
                     <form class="form-inline">
-                        <input type="text" class="form-control" value="{{ Request::get('id')}}" name="id" placeholder="ID">
+                        <!-- <input type="text" class="form-control" value="{{ Request::get('id')}}" name="id" placeholder="ID"> -->
                         <input type="text" class="form-control" value="{{ Request::get('email')}}" name="email" placeholder="Email...">
                         <select name="type" class="form-control">
                             <option value="0">Phân loại khách</option>
@@ -44,12 +44,15 @@
                                         <th>Tài khoản</th>
                                         <th>Trạng thái</th>
                                         <th>Thời gian</th>
+                                        <th>Ghi chú</th>
                                         <th>Chỉnh sửa</th>
                                     </tr>
                                     @if (isset($transactions))
+                                    <?php $count = 0; ?>
                                         @foreach ($transactions as $transaction)
+                                        <?php $count++; ?>
                                             <tr>
-                                                <td>{{ $transaction->id}}</td>
+                                                <td>{{ $count}}</td>
                                                 <td>
                                                     <ul>
                                                         <li>Name: {{ $transaction->tst_name}}</li>
@@ -73,6 +76,7 @@
                                                     </span>
                                                 </td>
                                                 <td>{{ $transaction->created_at}}</td>
+                                                <td>{{ $transaction->tst_note}}</td>
                                             <td>
                                                 <a data-id="{{$transaction->id}}" href="{{ route('ajax.admin.transaction.detail', $transaction->id)}}" class="btn btn-xs btn-info js-preview-transaction"><i class="fa fa-eye"></i> Xem</a>
 

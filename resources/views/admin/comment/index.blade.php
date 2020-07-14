@@ -11,11 +11,11 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>Nhận xét sản phẩm</h1>
-        <ol class="breadcrumb">
+<!--         <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
             <li><a href="{{  route('admin.comment.index') }}"> Comment</a></li>
             <li class="active"> List</li>
-        </ol>
+        </ol> -->
     </section>
     <!-- Main content -->
     <section class="content">
@@ -27,16 +27,18 @@
                         <table class="table">
                             <tbody>
                             <tr>
-                                <th style="width: 10px">#</th>
-                                <th>Name</th>
-                                <th>Comment </th>
-                                <th>Time</th>
-                                <th>Action</th>
+                                <th style="width: 10px">STT</th>
+                                <th>Tên</th>
+                                <th>Bình luận </th>
+                                <th>Thời gian </th>
+                                <th>Cập nhật </th>
                             </tr>
                             @if (isset($comments))
+                                <?php $count = 0; ?>
                                 @foreach($comments as $comment)
+                                <?php $count++; ?>
                                     <tr>
-                                        <td>{{ $comment->id }}</td>
+                                        <td>{{ $count }}</td>
                                         <td>{{ $comment->user->name ?? "[N\A]" }}</td>
                                         <td>{{ $comment->cmt_content ?? "[N\A]" }}</td>
                                         <td>{{ $comment->created_at }}</td>

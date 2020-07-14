@@ -3,11 +3,11 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>Quản lý danh mục sản phẩm</h1>
-        <ol class="breadcrumb">
+        <!-- <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
             <li><a href="{{ route('admin.category.index')}}"> Category</a></li>
             <li class="active"> List</a></li>
-        </ol>
+        </ol> -->
     </section>
     <!-- Main content -->
     <section class="content">
@@ -29,12 +29,14 @@
                                         <th>Chỉnh sửa</th>
                                     </tr>
                                     @if ($categories)
+                                        <?php $count = 0; ?>
                                         @foreach ($categories as $category)
+                                            <?php $count++; ?>
                                             <tr>
-                                                <td>{{ $category->id}}</td>
+                                                <td>{{ $count }}</td>
                                                 <td>{{ $category->c_name}}</td>
                                                 <td>
-                                                    <img src="{{ url('images/no-image.jpg') }}" style="width: 80px; height: 80px;">
+                                                    <img src="{{ pare_url_file($category->c_avatar) }}" style="width: 80px; height: 80px;">
                                                 </td>
                                                 <td>
                                                       @if ($category->c_status == 1)

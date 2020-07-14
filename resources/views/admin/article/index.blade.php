@@ -3,11 +3,11 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>Quản lý bài viết</h1>
-        <ol class="breadcrumb">
+<!--         <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
             <li><a href="{{ route('admin.article.index')}}"> Article</a></li>
             <li class="active"> List</a></li>
-        </ol>
+        </ol> -->
     </section>
     <!-- Main content -->
     <section class="content">
@@ -31,9 +31,11 @@
                                     </tr>
                             </tbody>    
                                  @if (isset($articles))
+                                 <?php $count = 0; ?>
                                         @foreach ($articles as $article)
+                                        <?php $count++; ?>
                                             <tr>
-                                                <td>{{ $article->id}}</td>
+                                                <td>{{ $count}}</td>
                                                 <td>{{ $article->a_name}}</td>
                                                 <td>
                                                     <span class="label label-success">{{ $article->menu->mn_name ?? "[N\A]"}}</span>

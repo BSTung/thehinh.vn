@@ -3,11 +3,11 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>Quản lý từ khóa</h1>
-        <ol class="breadcrumb">
+        <!-- <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
             <li><a href="{{ route('admin.keyword.index')}}"> Keyword</a></li>
             <li class="active"> List</a></li>
-        </ol>
+        </ol> -->
     </section>
     <!-- Main content -->
     <section class="content">
@@ -28,9 +28,11 @@
                                         <th>Chỉnh sửa</th>
                                     </tr>
                                     @if (isset($keywords))
+                                        <?php $count = 0; ?>
                                         @foreach ($keywords as $keyword)
+                                        <?php $count++; ?>
                                             <tr>
-                                                <td>{{ $keyword->id}}</td>
+                                                <td>{{ $count}}</td>
                                                 <td>{{ $keyword->k_name}}</td>
                                                 <td>{{ $keyword->k_description}}</td>
                                                 <td>

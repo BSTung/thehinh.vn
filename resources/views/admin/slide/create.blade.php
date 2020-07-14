@@ -1,4 +1,3 @@
-
 @extends('layouts.app_master_admin')
 @section('content')
     <!-- Content Header (Page header) -->
@@ -51,8 +50,8 @@
                         </div>
                     <div class="col-md-3">                          
                             <div class="form-group">
-                                <label for="name">Phân loại </label>
-                                <input type="text" class="form-control" name="sd_sort" placeholder="0"> 
+                                <label for="name">Thứ tự </label>
+                                <input type="text" class="form-control" name="sd_sort" value="{{ old('sd_sort',0) }}" placeholder="0"> 
                                 @if ($errors->first('sd_sort'))
                                     <span class="text-danger">{{ $errors->first('sd_sort')}}</span>
                                 @endif              

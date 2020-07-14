@@ -25,6 +25,7 @@
     </style>
 @stop
 @section('content')
+    
     <div class="container cart">
         <div class="left">
             <div class="list">

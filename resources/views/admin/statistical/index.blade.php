@@ -2,10 +2,10 @@
 @section('content')
     <!-- Content Header (Page header) -->
     <section class="content-header">
-        <h1>Trang quản trị hệ thống website xây dựng website bán đồng hồ</h1>
-        <ol class="breadcrumb">
+        <h1>Quản lý thống kê</h1>
+        <!-- <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        </ol>
+        </ol> -->
     </section>
     <section class="content">
         <!-- Info boxes -->
@@ -99,18 +99,20 @@
                         <table class="table no-margin">
                             <thead>
                                 <tr>
-                                    <th>ID</th>
-                                    <th>Info</th>
-                                    <th>Money</th>
-                                    <th>Account</th>
-                                    <th>Status</th>
-                                    <th>Time</th>
+                                    <th>STT</th>
+                                    <th>Thông tin đơn hàng</th>
+                                    <th>Giá tiền</th>
+                                    <th>Tài khoản</th>
+                                    <th>Trạng thái</th>
+                                    <th>Thời gian</th>
                                 </tr>
                             </thead>
                             <tbody>
+                                <?php $count = 0; ?>
                                 @foreach( $transactions as $transaction )
+                                <?php $count++; ?>
                                         <tr>
-                                            <td>{{ $transaction->id}}</td>
+                                            <td>{{ $count}}</td>
                                                 <td>
                                                     <ul>
                                                         <li>Name: {{ $transaction->tst_name}}</li>
@@ -334,14 +336,14 @@
                 text: 'Biểu đồ doanh thu các ngày trong tháng'
             },
             subtitle: {
-                text: 'Source: WorldClimate.com'
+                text: ''
             },
             xAxis: {
                 categories: listday
             },
             yAxis: {
                 title: {
-                    text: 'Temperature'
+                    text: ''
                 },
                 labels: {
                     formatter: function () {

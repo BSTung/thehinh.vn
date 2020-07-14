@@ -10,14 +10,14 @@
         <div class="breadcrumb">
                     <ul>
                         <li>
-                            <a itemprop="url" href="/" title="Home"><span itemprop="title">Trang chủ</span></a>
+                            <a itemprop="url" href="http://localhost:8080/frameLaravel/thehinh.vn/public/" title="Trang chủ"><span itemprop="title">Trang chủ</span></a>
                         </li>
                         <li>
-                            <a itemprop="url" href="{{ route('get.product.list')}}" title="Sản phẩm chính hãng"><span itemprop="title">Sản phẩm chính hãng</span></a>
+                            <a itemprop="url" href="{{ route('get.product.list')}}" title="Sản phẩm"><span itemprop="title">Sản phẩm</span></a>
                         </li>
 
                         <li>
-                            <a itemprop="url" href="" title="Chi tiết"><span itemprop="title">Chi tiết</span></a>
+                            <a itemprop="url" href="" title="Chi tiết sản phẩm"><span itemprop="title">{{ $product->pro_name}}</span></a>
                         </li>
 
                     </ul>
@@ -99,7 +99,7 @@
                             </div>
                             @if (isset($product->keywords))
                             <div class="infomation" style="margin-top: 20px">
-                                <h2 class="infomation__title">Keyword</h2>
+                                <h2 class="infomation__title">Từ khóa</h2>
                                 <div class="infomation__group">
                                     <div class="item">
                                     @foreach($product->keywords as $keyword)
@@ -114,7 +114,12 @@
                 </div>
             </div>
 
-              @include('frontend.pages.product_detail.include._inc_ratings')
+
+            <div class="card">
+                @include('frontend.pages.product_detail.include._inc_content')                       
+            </div>
+            
+            @include('frontend.pages.product_detail.include._inc_ratings')
 
             </div>
 

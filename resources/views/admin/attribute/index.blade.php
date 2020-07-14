@@ -3,11 +3,11 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <h1>Quản lý thuộc tính</h1>
-        <ol class="breadcrumb">
+        <!-- <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li><a href="{{ route('admin.attribute.index')}}"> Attribute</a></li>
+            <li><a href="{{ route('admin.attribute.index')}}"> Thuộc tính</a></li>
             <li class="active"> List</a></li>
-        </ol>
+        </ol> -->
     </section>
     <!-- Main content -->
     <section class="content">
@@ -28,9 +28,11 @@
                                         <th>Chỉnh sửa</th>
                                     </tr>
                                     @if (isset($attributes))
+                                        <?php $count = 0; ?>
                                         @foreach ($attributes as $attribute)
+                                        <?php $count++; ?>
                                             <tr>
-                                                <td>{{ $attribute->id}}</td>
+                                                <td>{{ $count}}</td>
                                                 <td>{{ $attribute->atb_name}}</td>
                                                 <td>
                                                     <span class="{{ $attribute->getType($attribute->atb_type) ['class']}}">

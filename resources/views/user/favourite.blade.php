@@ -12,18 +12,22 @@
                 <table class="table table-striped">
                     <thead>
                         <tr>
-                            <th scope="col">Mã ĐH</th>
-                            <th class="w-25" scope="col">Name</th>
-                            <th scope="col">Category</th>
-                            <th scope="col">Avatar</th>
-                            <th scope="col">Price</th>
-                            <th scope="col">#</th>
+                            <!-- <th scope="col">Mã SP</th> -->
+                            <th style="width: 10px">STT</th>
+                            <th class="w-25" scope="col">Sản phẩm</th>
+                            <th scope="col">Danh mục</th>
+                            <th scope="col">Ảnh</th>
+                            <th scope="col">Giá</th>
+                            <th scope="col">Cập nhật</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach($products as $item)
+                        <?php $count = 0; ?>
+                        @foreach($products as $item )
+                            <?php $count++; ?>
                             <tr>
-                                <th scope="row">DH{{ $item->id }}</th>
+                                <!-- <th scope="row">SP{{ $item->id }}</th> -->
+                                <td>{{ $count}}</td>
                                 <th>{{ $item->pro_name }}</th>
                                 <th>
                                     <span class="label label-success">{{ $item->category->c_name ?? "[N\A]" }}</span>
@@ -33,7 +37,7 @@
                                 </th>
                                 <th>{{ number_format($item->pro_price,0,',','.') }} đ</th>
                                 <th>
-                                    <a class="btn btn-default" href="{{  route('get.user.favourite.delete', $item->id) }}">Huỷ bỏ</a>
+                                    <a style="background-color: red" class="btn btn-warning"  href="{{  route('get.user.favourite.delete', $item->id) }}">Huỷ bỏ</a>
                                 </th>
                             </tr>
                         @endforeach

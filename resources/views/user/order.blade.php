@@ -31,9 +31,9 @@
             <h4>Thông tin sản phẩm</h4>
             @include('user.include._inc_list_product_order')
             <div>
-                <a href="{{ route('get.user.transaction') }}" class="btn btn-light"><i class="fa fa-angle-double-left"></i> Quay lại đơn hàng</a>
+                <a href="{{ route('get.user.transaction') }}" class="btn btn-primary js-"><i class="la la-angle-double-left"></i> Quay lại đơn hàng</a>
                 @if ($transaction->tst_status != -1)
-                    <a href="{{ route('get.user.tracking_order', $transaction->id) }}" class="btn btn-primary js-">Theo dõi đơn hàng <i class="fa fa-angle-double-right"></i></a>
+                    <a href="{{ route('get.user.tracking_order', $transaction->id) }}" class="btn btn-primary js-">Theo dõi đơn hàng <i class="la la-angle-double-right"></i></a>
                 @endif
             </div>
         </div>
